@@ -1,0 +1,27 @@
+.people-manager {
+    border: 1px solid #ccc;
+    padding: 10px;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+    min-width: 200px;
+    max-width: 400px;
+    .headerButtons {
+        display: flex;
+        gap: 10px;
+        margin-top: 10px;
+        justify-content: center;
+    }
+}
+
+input {
+    display: flex;
+    flex-direction: column;
+    margin: 10px 0px;
+}
+
+.person-entry {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 5px 0;
+}
