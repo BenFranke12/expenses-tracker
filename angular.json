@@ -28,6 +28,9 @@
             ],
             "styles": [
               "src/styles.scss"
+            ],
+            "polyfills": [
+              "@angular/localize/init"
             ]
           },
           "configurations": {
@@ -62,6 +65,11 @@
             },
             "development": {
               "buildTarget": "expenses-tracker:build:development"
+            },
+            "hmr": {
+              "buildTarget": "expenses-tracker:build:development",
+              "hmr": true,
+              "watch": true
             }
           },
           "defaultConfiguration": "development"
@@ -82,6 +90,9 @@
             ],
             "styles": [
               "src/styles.scss"
+            ],
+            "polyfills": [
+              "@angular/localize/init"
             ]
           }
         }

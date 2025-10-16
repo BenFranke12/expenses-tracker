@@ -1,0 +1,45 @@
+.individual-expenses {
+    border: 1px solid #ccc;
+    padding: 10px;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+    min-width: 600px;
+    max-width: 800px;
+
+    .headerButtons {
+        display: flex;
+        gap: 10px;
+        margin-top: 10px;
+        justify-content: center;
+    }
+
+    .expense-entry {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin: 5px 0;
+        gap: 5px;
+
+        .expense-people {
+            label {
+                font-weight: bold;
+                display: flex;
+                gap: 10px;
+            }
+        }
+
+        input[type="checkbox"] {
+            display: flex;
+            flex-direction: column;
+            margin-left: 10px;
+            transform: scale(1.5);
+        }
+    }
+}
+
+
+input {
+    display: flex;
+    flex-direction: column;
+    margin: 10px 0px;
+}

@@ -1,0 +1,16 @@
+<div class="people-manager">
+    <h2>People Manager</h2>
+    <div class="headerButtons">
+        <button (click)="peopleService.add('')">Add Person</button>
+        <button (click)="peopleService.clearAll()">Clear All</button>
+    </div>
+    @for (item of peopleService.people(); track $index) {
+        <div class="person-entry">
+            <!-- editable input that updates the shared people signal -->
+            <input [value]="item" (input)="peopleService.update($index, $event.target.value)" required>
+            <span class="material-icons" (click)="peopleService.remove($index)">delete</span>
+        </div>
+    } @empty {
+        <p>No people added yet.</p>
+    }
+</div>

@@ -1,0 +1,32 @@
+<div class="individual-expenses">
+    <h2>Individual Expenses</h2>
+    <div class="headerButtons">
+        <button (click)="addExpense()">Add Expense</button>
+        <button (click)="expenses.set([])">Clear All</button>
+    </div>
+
+    @for (expense of expenses(); track expense.name) {
+        <div class="expense-entry">
+            <input placeholder="Expense name" [value]="expense.name" (keyup)="updateExpenseName($index, $event.target.value)">
+            <input type="number" placeholder="Amount" [value]="expense.amount" (input)="updateExpenseAmount($index, +$event.target.value)">
+            <span class="material-icons" (click)="removeExpense($index)">delete</span>
+
+            <div class="expense-people">
+                <small>Assign people:</small>
+                @for (person of peopleService.people(); track $index) {
+                    <label>
+                        <input
+                          type="checkbox"
+                          [checked]="isPersonAttached(expense, person)"
+                          (change)="togglePersonOnExpense(expense, person, $event.target.checked)">
+                        {{ person }}
+                    </label>
+                } @empty {
+                    <p>No people available.</p>
+                }
+            </div>
+        </div>
+    } @empty {
+        <p>No expenses added yet.</p>
+    }
+</div>
